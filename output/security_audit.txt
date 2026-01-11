@@ -1,0 +1,88 @@
+================================================================================
+                 SECURITY AUDIT REPORT - TechCorp AB                            
+================================================================================
+Generated (baseline-date): 2024-10-14 00:00:00
+Audit Root: ./network_configs/network_configs
+
+FILE INVENTORY
+--------------------------------------------------------------------------------
+Total files (conf/rules/log): 14
+Config files (conf/rules):    9
+Log files (.log):             5
+Files modified last 7 days:   13
+
+FILES MODIFIED LAST 7 DAYS
+--------------------------------------------------------------------------------
+2025-10-16 07:56:07  baseline-router.conf
+2024-10-14 00:00:00  RT-EDGE-01.conf
+2024-10-14 00:00:00  access-2024-10-14.log
+2024-10-14 00:00:00  security-2024-10-14.log
+2024-10-14 00:00:00  system-2024-10-14.log
+2024-10-13 00:00:00  SW-CORE-01.conf
+2024-10-13 00:00:00  security-2024-10-13.log
+2024-10-13 00:00:00  system-2024-10-13.log
+2024-10-12 00:00:00  FW-DMZ-01.rules
+2024-10-11 00:00:00  FW-DC-01.rules
+2024-10-10 00:00:00  RT-EDGE-02.conf
+2024-10-09 00:00:00  SW-CORE-02.conf
+2024-10-08 00:00:00  RT-LAGER-01.conf
+
+FILE TYPES SUMMARY
+--------------------------------------------------------------------------------
+.conf    count= 7  total=     0 MB
+.log     count= 5  total=  0.01 MB
+.rules   count= 2  total=     0 MB
+
+TOP 5 LARGEST LOG FILES
+--------------------------------------------------------------------------------
+security-2024-10-13.log           0 MB  2024-10-13 00:00:00
+access-2024-10-14.log             0 MB  2024-10-14 00:00:00
+system-2024-10-14.log             0 MB  2024-10-14 00:00:00
+security-2024-10-14.log           0 MB  2024-10-14 00:00:00
+system-2024-10-13.log             0 MB  2024-10-13 00:00:00
+
+UNIQUE IP ADDRESSES (from .conf)
+--------------------------------------------------------------------------------
+0.0.0.0, 192.168.1.1, 192.168.1.100, 192.168.1.2, 192.168.1.253, 192.168.1.254, 192.168.1.50, 192.168.10.1, 192.168.10.2, 192.168.10.254, 192.168.10.50, 192.168.2.0, 192.168.2.1, 192.168.2.254, 192.168.200.1, 192.168.3.0, 203.0.113.1, 203.0.113.2, 203.0.113.5, 203.0.113.6, 255.255.255.0, 255.255.255.252
+
+LOG KEYWORDS COUNT (ERROR / FAILED / DENIED)
+--------------------------------------------------------------------------------
+security-2024-10-13.log      ERROR=  6  FAILED=  6  DENIED=  1
+security-2024-10-14.log      ERROR=  6  FAILED=  4  DENIED=  1
+system-2024-10-13.log        ERROR=  5  FAILED=  1  DENIED=  0
+system-2024-10-14.log        ERROR=  5  FAILED=  1  DENIED=  0
+access-2024-10-14.log        ERROR=  0  FAILED=  3  DENIED=  1
+
+SECURITY ISSUES (pattern matches)
+--------------------------------------------------------------------------------
+Total findings: 20
+work-config-audit/network_configs/network_configs/routers/RT-EDGE-01.conf:35  [password\s+\S+]  password 7 0822455D0A16
+work-config-audit/network_configs/network_configs/routers/RT-EDGE-01.conf:7  [secret\s+\S+]  enable secret 5 $1$mERr$hx5rVt7rrb6Jg8yUqzPHr0
+work-config-audit/network_configs/network_configs/routers/RT-EDGE-01.conf:27  [snmp-server community\s+public]  snmp-server community public RO
+work-config-audit/network_configs/network_configs/routers/RT-EDGE-01.conf:28  [snmp-server community\s+private]  snmp-server community private RW
+work-config-audit/network_configs/network_configs/routers/RT-EDGE-02.conf:7  [enable password\s+\S+]  enable password cisco123
+work-config-audit/network_configs/network_configs/routers/RT-EDGE-02.conf:7  [password\s+\S+]  enable password cisco123
+work-config-audit/network_configs/network_configs/routers/RT-EDGE-02.conf:22  [snmp-server community\s+public]  snmp-server community public RO
+work-config-audit/network_configs/network_configs/routers/RT-EDGE-02.conf:23  [snmp-server community\s+private]  snmp-server community private RW
+work-config-audit/network_configs/network_configs/routers/RT-LAGER-01.conf:21  [password\s+\S+]  password cisco
+work-config-audit/network_configs/network_configs/routers/RT-LAGER-01.conf:7  [secret\s+\S+]  enable secret 5 $1$xyz$abcdef123456789
+work-config-audit/network_configs/network_configs/switches/SW-ACCESS-01.conf:8  [enable password\s+\S+]  enable password password
+work-config-audit/network_configs/network_configs/switches/SW-ACCESS-01.conf:8  [password\s+\S+]  enable password password
+work-config-audit/network_configs/network_configs/switches/SW-ACCESS-01.conf:7  [secret\s+\S+]  ! ERROR: No enable secret configured
+work-config-audit/network_configs/network_configs/switches/SW-ACCESS-01.conf:24  [snmp-server community\s+public]  snmp-server community public
+work-config-audit/network_configs/network_configs/switches/SW-ACCESS-01.conf:25  [snmp-server community\s+private]  snmp-server community private
+work-config-audit/network_configs/network_configs/switches/SW-CORE-01.conf:36  [secret\s+\S+]  username admin privilege 15 secret admin
+work-config-audit/network_configs/network_configs/switches/SW-CORE-02.conf:7  [enable password\s+\S+]  enable password Password123
+work-config-audit/network_configs/network_configs/switches/SW-CORE-02.conf:31  [username\s+\S+\s+password\s+\S+]  username admin password 0 admin123
+work-config-audit/network_configs/network_configs/switches/SW-CORE-02.conf:7  [password\s+\S+]  enable password Password123
+work-config-audit/network_configs/network_configs/switches/SW-CORE-02.conf:31  [password\s+\S+]  username admin password 0 admin123
+
+BASELINE COMPLIANCE (routers)
+--------------------------------------------------------------------------------
+RT-LAGER-01.conf     missing baseline lines: 12
+RT-EDGE-01.conf      missing baseline lines: 11
+RT-EDGE-02.conf      missing baseline lines: 10
+
+================================================================================
+                                RAPPORT SLUT                                    
+================================================================================
